@@ -11,7 +11,7 @@ const Grocery = ({ id, name, complete, groceryClick}) => (
 
 const styles = {
   grocery: {cursor: "pointer", color:"red"},
-  complete: {color:"green", textDecoration: "line-through"}
+  complete: {color:"green", textDecoration: "line-through", opacity:".3"}
 }
 
 export default Grocery
