@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import List from './List'
 import GForm from './GForm'
 import './App.css';
-
+import { Container, } from "semantic-ui-react";
 
 class App extends Component {
   state = { groceries: []  }
@@ -28,9 +28,9 @@ class App extends Component {
     })
   }
 
-  addItem = (name) => {
+  addItem = (name, department) => {
     const { groceries } = this.state
-    const grocery = {name, id: this.getUniqId() , complete: false }
+    const grocery = {name, department, id: this.getUniqId() , complete: false }
     this.setState({ groceries: [grocery, ...groceries] })
     }
 
@@ -38,10 +38,10 @@ class App extends Component {
     const{ groceries } = this.state
 
     return (
-      <div class="App">
+      <Container style={{ paddingTop:"25px"}} textAlign="center">
         <GForm addItem={this.addItem}/>
-        <List name="Grocery List" items={groceries} groceryClick={this.handleClick} />
-      </div>
+        <List items={groceries} groceryClick={this.handleClick} />
+      </Container>
     );
   }
 }
