@@ -19,7 +19,7 @@ const renderitems = (items, department, groceryClick) => {
 const List = ({items, groceryClick}) => (
   <>
     <Header as="h1">Grocery List</Header>
-    <Grid columns="3">
+    <Grid stackable columns="3">
 
       <Grid.Column>
         <Segment>
